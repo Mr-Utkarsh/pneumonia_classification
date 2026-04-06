@@ -8,4 +8,3 @@ __MACOSX/
 .ipynb_checkpoints/
 echo "chest_xray/" >> .gitignore
 echo "model/" >> .gitignorechest_xray/
-model/
