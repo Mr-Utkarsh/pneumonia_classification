@@ -6,5 +6,3 @@ chest_xray/
 .DS_Store
 __MACOSX/
 .ipynb_checkpoints/
-echo "chest_xray/" >> .gitignore
-echo "model/" >> .gitignorechest_xray/
