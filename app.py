@@ -1,11 +1,9 @@
 # Importing Libraries
 import streamlit as st
 import tensorflow as tf
-import cv2
 import numpy as np
 from PIL import Image
-from tensorflow import keras
-from keras.applications.efficientnet_v2 import preprocess_input
+from tensorflow.keras.applications.efficientnet_v2 import preprocess_input
 
 
 
@@ -29,7 +27,7 @@ st.sidebar.title("ℹ️ How to Use")
 st.sidebar.markdown("""
 1. Upload a **PNEUMONIA X-RAY image**
 2. Supported formats: **JPG, PNG, JPEG**
-    3. The model will predict **PNEUMONIA or Normal**
+3. The model will predict **PNEUMONIA or Normal**
 4. Confidence score shows prediction certainty
 """)
 
@@ -50,8 +48,8 @@ if uploaded_file is not None:
     st.image(image, caption="Uploaded Image", width=300)
 
     ## Preprocess
+    image = image.resize((Img_size, Img_size))
     img = np.array(image)
-    img = cv2.resize(img, (Img_size, Img_size))
     x = np.expand_dims(img, axis=0)
     x = preprocess_input(x)
 
